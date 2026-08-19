@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    font-size: clamp(10px, 1.8vw, 16px);
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 400;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-main);
+    color: whitesmoke;
+}
+
+
+.cwp-padding {
+    padding: 32px max(calc(50% - 720px), 120px);
+}
+
+.bt-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
