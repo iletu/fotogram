@@ -9,12 +9,22 @@
     font-weight: 400;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: var(--bg-main);
     color: whitesmoke;
+}
+
+main {
+    text-align: center;
+    flex: 1;
 }
 
 

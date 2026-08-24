@@ -20,8 +20,11 @@ h1 {
     font-style: normal;
     font-weight: 800;
     font-size: 3.5rem;
-    padding-bottom: 50px;
+    padding-bottom: 90px;
 }
+
+
+
 
 #gallery {
     display: flex;
@@ -29,7 +32,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 #gallery img {
@@ -40,10 +43,155 @@ h1 {
 
 }
 
+/* DIALOG HEADER*/
+
+
+#img-dialog[open] {
+    width: 760px;
+    max-width: 90vw;
+
+    position: fixed;
+    margin: auto;
+    padding: 0;
+    background-color: #09212A;
+
+    border: none;
+    border-radius: 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+#img-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    font-family: 'Figtree';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#img-dialog header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 48px 56px;
+    box-sizing: border-box;
+}
+
+
+.dialog-close {
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+    border: none;
+    outline: none;
+
+    background-color: transparent;
+    background-image: url("./assets/icons/close-default.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    cursor: pointer;
+}
+
+.dialog-close:hover {
+    background-image: url("./assets/icons/close-hover.svg");
+}
+
+.dialog-close:active {
+    background-image: url("./assets/icons/close-active.svg");
+}
+
+/* DIALOG IMG */
+
+#image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    padding: 0 56px;
+    box-sizing: border-box;
+}
+
+#image img {
+    display: block;
+
+    width: 100%;
+    max-width: 540px;
+    height: 365px;
+
+    object-fit: cover;
+}
+
+/* DIALOG FOOTER */
+
+.dialog-footer {
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+
+}
+
+p {
+    color: white;
+}
+
+
+.dialog-arrow {
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+    border: none;
+    outline: none;
+
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    cursor: pointer;
+}
+
+.arrow-left {
+    background-image: url("./assets/icons/arrow_prev_default.svg");
+}
+
+.arrow-left:hover {
+    background-image: url("./assets/icons/arrow_prev_hover.png");
+}
+
+
+.arrow-right {
+    background-image: url("./assets/icons/arrow_next_default.svg");
+}
+
+.arrow-right:hover {
+    background-image: url("./assets/icons/arrow_next_hover.svg");
+}
+
+
+
+
 
 
 /*---------------- FOOTER ---------------- */
-footer {
+.footer-home {
+    height: 100%;
     font-family: 'Figtree';
     font-style: normal;
     font-weight: 400;

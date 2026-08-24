@@ -28,12 +28,37 @@
 
         </div>
 
+        <!-- dialog fenster -->
+        <dialog id="img-dialog">
+
+            <header>
+                <h2 id="img-title"></h2>
+
+                <button class="dialog-close" onclick="closeDialog()" aria-label="Close dialog">
+                </button>
+            </header>
+
+            <section id="image"></section>
+
+            <footer class="dialog-footer">
+                <button class="dialog-arrow arrow-left" onclick="previousImage()" aria-label="Previous image">
+                </button>
+
+                <p class="image-counter" id="image-counter">1/12</p>
+
+                <button class="dialog-arrow arrow-right" onclick="nextImage()" aria-label="Next image">
+                </button>
+            </footer>
+
+        </dialog>
+        <!-- =================================== -->
+
     </main>
 
 
 
 
-    <footer class="cwp-padding">
+    <footer class="footer-home cwp-padding">
         <img src="./assets/icons/logo_da.svg" alt="logo developer academy">
         <p>© 2023 Developer Akademie GmbH</p>
     </footer>

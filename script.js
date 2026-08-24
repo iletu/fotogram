@@ -15,25 +15,64 @@ const images = [
     "./assets/img/img_14.jpg"
 ];
 
+const titles = [
+    "Bluebell Dreams",
+    "Silent Horizon",
+    "Sapphire Bloom",
+    "Winter Sky",
+    "Ocean Motion",
+    "Frozen Blue",
+    "Crystal Petals",
+    "Midnight Leaves",
+    "Arctic Silence",
+    "Lone Winter",
+    "Coastal Calm",
+    "Blue Tides",
+    "Turquoise Forest",
+    "Water Drops"
+];
+
+
+const dialogRef = document.getElementById("img-dialog");
+
+
 function generateGallery() {
-    let galleryRef = document.getElementById("gallery");  // ✅ einmal reicht
+    let galleryRef = document.getElementById("gallery");
 
     for (let i = 0; i < images.length; i++) {
-        console.log(i);
-        // Hier jetzt Bild-Elemente bauen & an galleryRef anhängen
-        galleryRef.innerHTML += `<img src="${images[i]}" alt="Gallery image">`;
+        galleryRef.innerHTML += `
+            <img 
+                src="${images[i]}" 
+                alt="${titles[i]}" 
+                onclick="openDialog(${i})"
+            >
+        `;
     }
 }
 
 
+function openDialog(i) {
+    document.getElementById("img-title").innerHTML = titles[i];
 
-// function openImg(i) {
-//     console.log("Bild wurde geklickt!");
-//     document.getElementById(`img${i}`).classList.add('open');
-// }
+    document.getElementById("image").innerHTML = `
+        <img src="${images[i]}" alt="${titles[i]}">`;
+
+    dialogRef.showModal();
+}
+
+
+function closeDialog() {
+    dialogRef.close();
+}
+
+
+
+
+
 
 
 // Nächster Schritt
 // Du hast jetzt das Array und die Gallery-Referenz. Was fehlt: Aus jedem Bild-Pfad ein Thumbnail-Element bauen und in den #gallery-Container einfügen.
 // Schau dir dazu nochmal das Video „Das DOM und .innerHTML" an – dort siehst du, wie du HTML dynamisch erzeugst. Für den Bild-Tag brauchst du vor allem src (dein Array-Wert) und einen sinnvollen alt-Text.
-// Probier mal, in der Schleife ein <img>-Element mit createElement zu bauen und es mit appendChild ans galleryRef zu hängen. Wie weit kommst du damit?
+// Probier mal, in der Schleife ein <img>-Element mit createElement zu bauen und es mit appendChild ans galleryRef zu hängen. Wie weit kommst du damit? `<img src="${images[i]}" alt="${titles[i]}">`
+
