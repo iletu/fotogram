@@ -40,39 +40,47 @@ function generateGallery() {
     let galleryRef = document.getElementById("gallery");
 
     for (let i = 0; i < images.length; i++) {
-        galleryRef.innerHTML += `
-            <img 
-                src="${images[i]}" 
-                alt="${titles[i]}" 
-                onclick="openDialog(${i})"
-            >
-        `;
+        galleryRef.innerHTML += `<img src="${images[i]}" alt="${titles[i]}" onclick="openDialog(${i})">`;
     }
 }
 
+let currentImageIndex = 0;
 
 function openDialog(i) {
-    document.getElementById("img-title").innerHTML = titles[i];
+    currentImageIndex = i;
 
-    document.getElementById("image").innerHTML = `
-        <img src="${images[i]}" alt="${titles[i]}">`;
+    document.getElementById("img-title").innerHTML = titles[i];
+    document.getElementById("image").innerHTML = `<img src="${images[i]}" alt="${titles[i]}">`;
+    document.getElementById("image-counter").innerHTML = `${i + 1}/${images.length}`;
 
     dialogRef.showModal();
 }
-
 
 function closeDialog() {
     dialogRef.close();
 }
 
+function nextImage() {
+    currentImageIndex++;
+
+    if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+    }
+
+    document.getElementById("img-title").innerHTML = titles[currentImageIndex];
+    document.getElementById("image").innerHTML = `<img src="${images[currentImageIndex]}" alt="${titles[currentImageIndex]}">`;
+    document.getElementById("image-counter").innerHTML = `${currentImageIndex + 1}/${images.length}`;
+}
 
 
+function previousImage() {
+    currentImageIndex--;
 
+    if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+    }
 
-
-
-// Nächster Schritt
-// Du hast jetzt das Array und die Gallery-Referenz. Was fehlt: Aus jedem Bild-Pfad ein Thumbnail-Element bauen und in den #gallery-Container einfügen.
-// Schau dir dazu nochmal das Video „Das DOM und .innerHTML" an – dort siehst du, wie du HTML dynamisch erzeugst. Für den Bild-Tag brauchst du vor allem src (dein Array-Wert) und einen sinnvollen alt-Text.
-// Probier mal, in der Schleife ein <img>-Element mit createElement zu bauen und es mit appendChild ans galleryRef zu hängen. Wie weit kommst du damit? `<img src="${images[i]}" alt="${titles[i]}">`
-
+    document.getElementById("img-title").innerHTML = titles[currentImageIndex];
+    document.getElementById("image").innerHTML = `<img src="${images[currentImageIndex]}" alt="${titles[currentImageIndex]}">`;
+    document.getElementById("image-counter").innerHTML = `${currentImageIndex + 1}/${images.length}`;
+}

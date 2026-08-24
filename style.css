@@ -23,9 +23,6 @@ h1 {
     padding-bottom: 90px;
 }
 
-
-
-
 #gallery {
     display: flex;
     flex-wrap: wrap;
@@ -43,8 +40,15 @@ h1 {
 
 }
 
-/* DIALOG HEADER*/
+#gallery img:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+    border: 1px solid white;
+}
 
+
+
+/* DIALOG HEADER*/
 
 #img-dialog[open] {
     width: 760px;
@@ -187,11 +191,8 @@ p {
 
 
 
-
-
 /*---------------- FOOTER ---------------- */
 .footer-home {
-    height: 100%;
     font-family: 'Figtree';
     font-style: normal;
     font-weight: 400;
