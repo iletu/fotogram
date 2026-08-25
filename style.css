@@ -14,7 +14,6 @@ main {
     text-align: center;
 }
 
-
 h1 {
     font-family: 'Figtree';
     font-style: normal;
@@ -37,7 +36,6 @@ h1 {
     width: 150px;
     object-fit: cover;
     border-radius: 10px;
-
 }
 
 #gallery img:hover {
@@ -47,8 +45,7 @@ h1 {
 }
 
 
-
-/* DIALOG HEADER*/
+/*---------------- DIALOG HEADER---------------- */
 
 #img-dialog[open] {
     width: 760px;
@@ -91,7 +88,6 @@ h2 {
     box-sizing: border-box;
 }
 
-
 .dialog-close {
     width: 48px;
     height: 48px;
@@ -117,7 +113,8 @@ h2 {
     background-image: url("./assets/icons/close-active.svg");
 }
 
-/* DIALOG IMG */
+
+/*---------------- DIALOG IMG---------------- */
 
 #image {
     width: 100%;
@@ -138,7 +135,8 @@ h2 {
     object-fit: cover;
 }
 
-/* DIALOG FOOTER */
+
+/*---------------- DIALOG ---------------- */
 
 .dialog-footer {
     padding: 50px;
@@ -147,13 +145,11 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 80px;
-
 }
 
 p {
     color: white;
 }
-
 
 .dialog-arrow {
     width: 48px;
@@ -179,7 +175,6 @@ p {
     background-image: url("./assets/icons/arrow_prev_hover.png");
 }
 
-
 .arrow-right {
     background-image: url("./assets/icons/arrow_next_default.svg");
 }
@@ -187,8 +182,6 @@ p {
 .arrow-right:hover {
     background-image: url("./assets/icons/arrow_next_hover.svg");
 }
-
-
 
 
 /*---------------- FOOTER ---------------- */

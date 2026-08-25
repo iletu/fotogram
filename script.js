@@ -34,8 +34,11 @@ const titles = [
 
 
 const dialogRef = document.getElementById("img-dialog");
+let currentImageIndex = 0;
 
 
+
+// Bilder aus den Arrays in der Galerie anzeigen
 function generateGallery() {
     let galleryRef = document.getElementById("gallery");
 
@@ -44,8 +47,7 @@ function generateGallery() {
     }
 }
 
-let currentImageIndex = 0;
-
+// Öffnet das ausgewählte Bild im Dialog und zeigt Bild, Titel und Bildzähler an
 function openDialog(i) {
     currentImageIndex = i;
 
@@ -56,13 +58,16 @@ function openDialog(i) {
     dialogRef.showModal();
 }
 
+
 function closeDialog() {
     dialogRef.close();
 }
 
+
 function nextImage() {
     currentImageIndex++;
 
+    // Nach dem letzten Bild wieder zum ersten Bild springen
     if (currentImageIndex >= images.length) {
         currentImageIndex = 0;
     }
@@ -76,6 +81,7 @@ function nextImage() {
 function previousImage() {
     currentImageIndex--;
 
+    // Vor dem ersten Bild wieder zum letzten Bild springen
     if (currentImageIndex < 0) {
         currentImageIndex = images.length - 1;
     }
